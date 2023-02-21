@@ -47,7 +47,6 @@ public class SecurityConfig {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
-    /* Remplace l'authentification BASIC pour une authentification personalisé  */
     @Bean
     public AuthenticationManager authenticationManager(UserDetailsService userDetailsService){
         var authProvider = new DaoAuthenticationProvider();
@@ -56,7 +55,6 @@ public class SecurityConfig {
         return new ProviderManager(authProvider);
     }
 
-    /* Specifie les utilisateurs qui ont accès à l'application (ici static) */
     @Bean
     public UserDetailsService inMemoryUserDetailsManager(){
         return new InMemoryUserDetailsManager(

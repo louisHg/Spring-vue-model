@@ -1,0 +1,23 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  1
+       author:  lhuyghe
+       changes:
+         -  createTable:
+              tableName:  User
+              columns:
+                -  column:
+                     name:  id
+                     type:  int
+                     autoIncrement:  true
+                     constraints:
+                       primaryKey:  true
+                       nullable:  false
+                -  column:
+                     name:  username
+                     type:  varchar(50)
+                -  column:
+                     name:  password
+                     type:  varchar(1000)
+                     constraints:
+                       nullable:  false
